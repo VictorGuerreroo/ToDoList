@@ -69,6 +69,11 @@ function mostrarError(error) {
 // Muestra un listado de las tareas
 function crearHTML() {
 
+    tareasPendientes.textContent = tareas.length;
+
+    
+    
+
     limpiarHTML();
 
     if(tareas.length > 0) {
@@ -88,7 +93,10 @@ function crearHTML() {
 
             //li.innerText = tarea.tarea;
 
-            li.innerHTML = `<div><input class="bg-danger" type="checkbox" id="check1"><label for="check1">&nbsp;&nbsp;${ tarea.tarea}</label></div>`
+            li.innerHTML = `<div><input type="checkbox" id="check1"><label for="check1">&nbsp;&nbsp;${ tarea.tarea}</label></div>`
+            
+            
+
             
             
             li.appendChild(btnEliminar);
@@ -96,7 +104,7 @@ function crearHTML() {
             listaTareas.appendChild(li);
             listaTareas.appendChild(linea);
 
-            tareasPendientes.textContent = tareas.length;
+            
             
         });
     }
@@ -113,10 +121,14 @@ function sincronizarStorage() {
 function borrarTarea(id) {
     tareas = tareas.filter(tarea => tarea.id !== id);
 
+    tareasRealizadas.textContent++;
     
-    tareasRealizadas.textContent = tareas.length;
+    
 
     crearHTML();
+
+    
+    
 }
 
 // Limpiar el HTML
