@@ -23,10 +23,23 @@
     color: gray;
 }
 
+label {
+    font-weight:bold;
+}
+
 input[type="checkbox"] + label {
     
 }
 input[type="checkbox"]:checked + label {
     color: red;
     text-decoration:line-through;
+}
+
+
+input[type="checkbox"]:checked + label:before {
+	background-color: red;
+}
+
+span {
+    color: gray;
 }

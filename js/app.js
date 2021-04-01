@@ -88,7 +88,7 @@ function crearHTML() {
 
             //li.innerText = tarea.tarea;
 
-            li.innerHTML = `<div class="mx-2"><input type="checkbox" id="check1"><label for="check1">&nbsp;&nbsp;${ tarea.tarea}</label></div>`
+            li.innerHTML = `<div><input class="bg-danger" type="checkbox" id="check1"><label for="check1">&nbsp;&nbsp;${ tarea.tarea}</label></div>`
             
             
             li.appendChild(btnEliminar);
